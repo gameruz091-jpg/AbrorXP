@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<meta name="description"
+      content="AbrorXP — Abrorbek Komilov. Developer, creator of NuqtaMC and creator of digital projects.">
+
+<meta name="author" content="Abrorbek Komilov">
+
+<title>AbrorXP — Personal Portfolio</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Inter, Arial, Helvetica, sans-serif;
+        background: #07070b;
+        color: #fff;
+        line-height: 1.6;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    /* NAVBAR */
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 18px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background: rgba(7, 7, 11, 0.78);
+        backdrop-filter: blur(18px);
+
+        border-bottom: 1px solid #22222d;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: -1px;
+    }
+
+    .logo span {
+        color: #9d5cff;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+        align-items: center;
+    }
+
+    nav ul a {
+        color: #9999a6;
+        transition: 0.3s;
+    }
+
+    nav ul a:hover {
+        color: #b982ff;
+    }
+
+    /* LANGUAGE */
+
+    .language {
+        display: flex;
+        gap: 5px;
+        margin-left: 20px;
+    }
+
+    .language button {
+        border: 1px solid #292936;
+        background: #111119;
+        color: #9999a6;
+        padding: 7px 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .language button:hover,
+    .language button.active {
+        background: #9d5cff;
+        color: white;
+        border-color: #9d5cff;
+    }
+
+    /* HERO */
+
+    .hero {
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+
+        padding: 120px 20px 70px;
+
+        background:
+            radial-gradient(
+                circle at 50% 25%,
+                rgba(157, 92, 255, 0.22),
+                transparent 38%
+            ),
+            #07070b;
+    }
+
+    .hero-content {
+        max-width: 900px;
+    }
+
+    .badge {
+        display: inline-block;
+
+        padding: 7px 16px;
+
+        border: 1px solid #3b2860;
+        border-radius: 30px;
+
+        color: #bd8bff;
+
+        background: rgba(157, 92, 255, 0.08);
+
+        margin-bottom: 22px;
+
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: clamp(55px, 10vw, 110px);
+        line-height: 0.95;
+        letter-spacing: -5px;
+        margin-bottom: 25px;
+    }
+
+    h1 span {
+        color: #9d5cff;
+    }
+
+    .hero-description {
+        color: #a5a5b0;
+        font-size: 20px;
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .buttons {
+        margin-top: 35px;
+
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+
+        flex-wrap: wrap;
+    }
+
+    .button {
+        padding: 13px 23px;
+
+        border-radius: 10px;
+
+        border: 1px solid #30303b;
+
+        background: #111119;
+
+        transition: 0.3s;
+    }
+
+    .button.primary {
+        background: #9d5cff;
+        border-color: #9d5cff;
+    }
+
+    .button:hover {
+        transform: translateY(-3px);
+    }
+
+    /* SECTIONS */
+
+    section {
+        max-width: 1200px;
+        margin: auto;
+        padding: 100px 7%;
+    }
+
+    .section-title {
+        font-size: 40px;
+        margin-bottom: 40px;
+        letter-spacing: -1px;
+    }
+
+    .section-title span {
+        color: #9d5cff;
+    }
+
+    .about {
+        max-width: 850px;
+        color: #aaaab5;
+        font-size: 18px;
+    }
+
+    /* INFO */
+
+    .info-grid {
+        margin-top: 35px;
+
+        display: grid;
+        grid-template-columns:
+            repeat(auto-fit, minmax(220px, 1fr));
+
+        gap: 15px;
+    }
+
+    .info {
+        background: #101017;
+
+        border: 1px solid #252530;
+
+        padding: 22px;
+
+        border-radius: 14px;
+    }
+
+    .info small {
+        display: block;
+        color: #777784;
+        margin-bottom: 5px;
+    }
+
+    .info strong {
+        color: white;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+        display: grid;
+
+        grid-template-columns:
+            repeat(auto-fit, minmax(270px, 1fr));
+
+        gap: 20px;
+    }
+
+    .project {
+        background: #101017;
+
+        border: 1px solid #252530;
+
+        border-radius: 18px;
+
+        padding: 28px;
+
+        transition: 0.35s;
+    }
+
+    .project:hover {
+        transform: translateY(-7px);
+        border-color: #9d5cff;
+        box-shadow:
+            0 15px 45px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-icon {
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+
+    .project h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .project p {
+        color: #92929d;
+    }
+
+    .project-link {
+        display: inline-block;
+
+        margin-top: 18px;
+
+        color: #b982ff;
+    }
+
+    /* HOBBIES */
+
+    .hobbies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .hobby {
+        background: #111119;
+
+        border: 1px solid #292934;
+
+        padding: 13px 18px;
+
+        border-radius: 30px;
+
+        color: #c2c2cc;
+    }
+
+    /* FAVORITE ANIME */
+
+    .anime-card {
+        padding: 35px;
+
+        border-radius: 20px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(157, 92, 255, 0.14),
+                rgba(17, 17, 25, 0.8)
+            );
+
+        border: 1px solid #33244c;
+    }
+
+    .anime-card h3 {
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+
+    .anime-card p {
+        color: #aaaab5;
+    }
+
+    /* SOCIALS */
+
+    .socials {
+        display: grid;
+
+        grid-template-columns:
+            repeat(auto-fit, minmax(210px, 1fr));
+
+        gap: 14px;
+    }
+
+    .social {
+        padding: 19px;
+
+        border-radius: 12px;
+
+        background: #101017;
+
+        border: 1px solid #252530;
+
+        transition: 0.3s;
+    }
+
+    .social:hover {
+        border-color: #9d5cff;
+        transform: translateY(-3px);
+    }
+
+    .social small {
+        display: block;
+        color: #777784;
+        margin-bottom: 5px;
+    }
+
+    /* FOOTER */
+
+    footer {
+        text-align: center;
+
+        padding: 40px 20px;
+
+        color: #686874;
+
+        border-top: 1px solid #22222d;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+        nav {
+            padding: 15px 5%;
+        }
+
+        nav ul {
+            display: none;
+        }
+
+        h1 {
+            letter-spacing: -3px;
+        }
+
+        .hero-description {
+            font-size: 17px;
+        }
+
+        section {
+            padding: 70px 6%;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+```
+<div class="logo">
+    Abror<span>XP</span>
+</div>
+
+<ul>
+
+    <li>
+        <a href="#about" data-uz="Men haqimda" data-en="About">
+            Men haqimda
+        </a>
+    </li>
+
+    <li>
+        <a href="#projects" data-uz="Loyihalar" data-en="Projects">
+            Loyihalar
+        </a>
+    </li>
+
+    <li>
+        <a href="#hobbies" data-uz="Qiziqishlar" data-en="Hobbies">
+            Qiziqishlar
+        </a>
+    </li>
+
+    <li>
+        <a href="#socials" data-uz="Aloqa" data-en="Socials">
+            Aloqa
+        </a>
+    </li>
+
+    <li class="language">
+
+        <button id="uzBtn" class="active" onclick="setLanguage('uz')">
+            🇺🇿
+        </button>
+
+        <button id="enBtn" onclick="setLanguage('en')">
+            🇬🇧
+        </button>
+
+    </li>
+
+</ul>
+```
+
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+
+```
+<div class="hero-content">
+
+    <div
+        class="badge"
+        data-uz="Dasturchi • Creator • Minecraft"
+        data-en="Developer • Creator • Minecraft">
+
+        Dasturchi • Creator • Minecraft
+
+    </div>
+
+    <h1>
+        <span>AbrorXP</span>
+    </h1>
+
+    <p
+        class="hero-description"
+        data-uz="Men Abrorbek Komilov — dasturchi, NuqtaMC yaratuvchisi va turli raqamli hamda kreativ loyihalar yaratuvchisiman."
+        data-en="I'm Abrorbek Komilov — a developer, creator of NuqtaMC, and a builder of digital and creative projects.">
+
+        Men Abrorbek Komilov — dasturchi, NuqtaMC yaratuvchisi
+        va turli raqamli hamda kreativ loyihalar yaratuvchisiman.
+
+    </p>
+
+    <div class="buttons">
+
+        <a
+            class="button primary"
+            href="#projects"
+            data-uz="Loyihalarim"
+            data-en="My Projects">
+
+            Loyihalarim
+
+        </a>
+
+        <a
+            class="button"
+            href="#socials"
+            data-uz="Meni topish"
+            data-en="Find Me">
+
+            Meni topish
+
+        </a>
+
+    </div>
+
+</div>
+```
+
+</header>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+```
+<h2
+    class="section-title"
+    data-uz="Men <span>haqimda</span>"
+    data-en="About <span>Me</span>">
+
+    Men <span>haqimda</span>
+
+</h2>
+
+<p
+    class="about"
+    data-uz="Mening ismim Abrorbek Komilov. Internetdagi asosiy nikim — AbrorXP. Men dasturlash, texnologiya va kreativ loyihalar yaratishga qiziqaman. Shuningdek, NuqtaMC Minecraft serverining yaratuvchisiman."
+    data-en="My name is Abrorbek Komilov. My main online nickname is AbrorXP. I am interested in programming, technology, and creating creative projects. I am also the creator of the NuqtaMC Minecraft server.">
+
+    Mening ismim Abrorbek Komilov. Internetdagi asosiy nikim —
+    AbrorXP. Men dasturlash, texnologiya va kreativ loyihalar
+    yaratishga qiziqaman. Shuningdek, NuqtaMC Minecraft serverining
+    yaratuvchisiman.
+
+</p>
+
+
+<div class="info-grid">
+
+    <div class="info">
+        <small data-uz="Ism" data-en="Name">Ism</small>
+        <strong>Abrorbek Komilov</strong>
+    </div>
+
+    <div class="info">
+        <small data-uz="Tug‘ilgan sana" data-en="Date of birth">
+            Tug‘ilgan sana
+        </small>
+        <strong>19 January 2011</strong>
+    </div>
+
+    <div class="info">
+        <small data-uz="Nickname" data-en="Nickname">
+            Nickname
+        </small>
+        <strong>AbrorXP</strong>
+    </div>
+
+    <div class="info">
+        <small data-uz="Kasb / Yo‘nalish" data-en="Role">
+            Kasb / Yo‘nalish
+        </small>
+        <strong
+            data-uz="Developer & Creator"
+            data-en="Developer & Creator">
+            Developer & Creator
+        </strong>
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+```
+<h2
+    class="section-title"
+    data-uz="Mening <span>loyihalarim</span>"
+    data-en="My <span>Projects</span>">
+
+    Mening <span>loyihalarim</span>
+
+</h2>
+
+
+<div class="projects">
+
+
+    <!-- NUQTAMC -->
+
+    <div class="project">
+
+        <div class="project-icon">🟣</div>
+
+        <h3>NuqtaMC</h3>
+
+        <p
+            data-uz="Men yaratgan Minecraft server loyihasi. Server, uning tizimlari va hamjamiyatini rivojlantirish bilan shug‘ullanaman."
+            data-en="A Minecraft server project created by me. I work on its systems, development, and community.">
+
+            Men yaratgan Minecraft server loyihasi.
+            Server, uning tizimlari va hamjamiyatini rivojlantirish
+            bilan shug‘ullanaman.
+
+        </p>
+
+        <a
+            class="project-link"
+            href="https://nuqtamc.lovable.app"
+            target="_blank">
+
+            NuqtaMC → 
+
+        </a>
+
+    </div>
+
+
+    <!-- KITTY -->
+
+    <div class="project">
+
+        <div class="project-icon">🤖</div>
+
+        <h3>Kitty</h3>
+
+        <p
+            data-uz="Shaxsiy AI yordamchi loyiham. Telegram orqali ishlaydigan, turli AI va avtomatlashtirish imkoniyatlarini birlashtiruvchi assistant."
+            data-en="My personal AI assistant project. A Telegram-based assistant combining AI capabilities and automation.">
+
+            Shaxsiy AI yordamchi loyiham.
+            Telegram orqali ishlaydigan, turli AI va avtomatlashtirish
+            imkoniyatlarini birlashtiruvchi assistant.
+
+        </p>
+
+    </div>
+
+
+    <!-- GOALMAP -->
+
+    <div class="project">
+
+        <div class="project-icon">🎯</div>
+
+        <h3>GoalMap</h3>
+
+        <p
+            data-uz="Maqsadlarni rejalashtirish, kuzatish va rivojlanishni tartibga solishga qaratilgan loyiham."
+            data-en="A project focused on planning goals, tracking progress, and organizing personal development.">
+
+            Maqsadlarni rejalashtirish, kuzatish va rivojlanishni
+            tartibga solishga qaratilgan loyiham.
+
+        </p>
+
+    </div>
+
+
+    <!-- ANIVERSE -->
+
+    <div class="project">
+
+        <div class="project-icon">🌌</div>
+
+        <h3>AniverseUZ</h3>
+
+        <p
+            data-uz="Animega bag‘ishlangan web loyiha. Anime ma’lumotlari, janrlar va qorong‘i anime uslubidagi interfeysga yo‘naltirilgan."
+            data-en="An anime-focused web project featuring anime information, genres, and a dark anime-inspired interface.">
+
+            Animega bag‘ishlangan web loyiha.
+            Anime ma’lumotlari, janrlar va qorong‘i anime
+            uslubidagi interfeysga yo‘naltirilgan.
+
+        </p>
+
+        <a
+            class="project-link"
+            href="https://aniverseuz.lovable.app"
+            target="_blank">
+
+            AniverseUZ →
+
+        </a>
+
+    </div>
+
+
+    <!-- CREATIVE AI -->
+
+    <div class="project">
+
+        <div class="project-icon">🎬</div>
+
+        <h3
+            data-uz="AI Creative Projects"
+            data-en="AI Creative Projects">
+
+            AI Creative Projects
+
+        </h3>
+
+        <p
+            data-uz="AI yordamida video, hikoya va vizual kontent yaratish bo‘yicha kreativ loyihalar va tajribalar."
+            data-en="Creative projects and experiments involving AI-generated videos, stories, and visual content.">
+
+            AI yordamida video, hikoya va vizual kontent yaratish
+            bo‘yicha kreativ loyihalar va tajribalar.
+
+        </p>
+
+    </div>
+
+
+    <!-- MORE -->
+
+    <div class="project">
+
+        <div class="project-icon">⚡</div>
+
+        <h3
+            data-uz="Yangi g‘oyalar"
+            data-en="New Ideas">
+
+            Yangi g‘oyalar
+
+        </h3>
+
+        <p
+            data-uz="Men doim yangi loyihalar, texnologiyalar va kreativ g‘oyalarni sinab ko‘raman. Bu portfolio vaqt o‘tishi bilan kengayadi."
+            data-en="I am always experimenting with new projects, technologies, and creative ideas. This portfolio will continue to grow.">
+
+            Men doim yangi loyihalar, texnologiyalar va kreativ
+            g‘oyalarni sinab ko‘raman. Bu portfolio vaqt o‘tishi
+            bilan kengayadi.
+
+        </p>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- HOBBIES -->
+
+<section id="hobbies">
+
+```
+<h2
+    class="section-title"
+    data-uz="Mening <span>qiziqishlarim</span>"
+    data-en="My <span>Interests</span>">
+
+    Mening <span>qiziqishlarim</span>
+
+</h2>
+
+
+<div class="hobbies">
+
+    <div
+        class="hobby"
+        data-uz="⛏️ Minecraft"
+        data-en="⛏️ Minecraft">
+        ⛏️ Minecraft
+    </div>
+
+    <div
+        class="hobby"
+        data-uz="💻 Dasturlash"
+        data-en="💻 Programming">
+        💻 Dasturlash
+    </div>
+
+    <div
+        class="hobby"
+        data-uz="🎨 Kreativ loyihalar"
+        data-en="🎨 Creative Projects">
+        🎨 Kreativ loyihalar
+    </div>
+
+    <div
+        class="hobby"
+        data-uz="🤖 AI"
+        data-en="🤖 AI">
+        🤖 AI
+    </div>
+
+    <div
+        class="hobby"
+        data-uz="🌐 Web yaratish"
+        data-en="🌐 Web Development">
+        🌐 Web yaratish
+    </div>
+
+    <div
+        class="hobby"
+        data-uz="🎬 Video yaratish"
+        data-en="🎬 Video Creation">
+        🎬 Video yaratish
+    </div>
+
+    <div
+        class="hobby"
+        data-uz="🌌 Anime"
+        data-en="🌌 Anime">
+        🌌 Anime
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- ANIME -->
+
+<section>
+
+```
+<h2
+    class="section-title"
+    data-uz="Sevimli <span>anime</span>"
+    data-en="Favorite <span>Anime</span>">
+
+    Sevimli <span>anime</span>
+
+</h2>
+
+
+<div class="anime-card">
+
+    <h3>🍥 Naruto</h3>
+
+    <p
+        data-uz="Anime ko‘rishni yoqtiraman. Mening eng sevimli animeim — Naruto."
+        data-en="I enjoy watching anime. My favorite anime is Naruto.">
+
+        Anime ko‘rishni yoqtiraman.
+        Mening eng sevimli animeim — Naruto.
+
+    </p>
+
+</div>
+```
+
+</section>
+
+<!-- SOCIALS -->
+
+<section id="socials">
+
+```
+<h2
+    class="section-title"
+    data-uz="Meni <span>toping</span>"
+    data-en="Find <span>Me</span>">
+
+    Meni <span>toping</span>
+
+</h2>
+
+
+<div class="socials">
+
+
+    <a
+        class="social"
+        href="https://instagram.com/abrorxp"
+        target="_blank">
+
+        <small>Instagram</small>
+        @abrorxp
+
+    </a>
+
+
+    <a
+        class="social"
+        href="https://t.me/AbrorXP"
+        target="_blank">
+
+        <small>Telegram</small>
+        @AbrorXP
+
+    </a>
+
+
+    <a
+        class="social"
+        href="https://x.com/abrorxp"
+        target="_blank">
+
+        <small>X</small>
+        @abrorxp
+
+    </a>
+
+
+    <a
+       class="social"
+       href="https://discord.com/users/1186336378200543233"
+       target="_blank"
+       rel="noopener noreferrer">
+
+       <small>Discord</small>
+       @abrorxp1
+
+    </a>
+
+</div>
+```
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+```
+<p
+    data-uz="© 2026 AbrorXP — Abrorbek Komilov"
+    data-en="© 2026 AbrorXP — Abrorbek Komilov">
+
+    © 2026 AbrorXP — Abrorbek Komilov
+
+</p>
+```
+
+</footer>
+
+<!-- LANGUAGE SCRIPT -->
+
+<script>
+
+function setLanguage(language) {
+
+    document.documentElement.lang = language;
+
+    document.querySelectorAll("[data-uz]").forEach(element => {
+
+        if (element.tagName === "H2") {
+            element.innerHTML = element.dataset[language];
+        } else {
+            element.textContent = element.dataset[language];
+        }
+
+    });
+
+
+    document.getElementById("uzBtn")
+        .classList.toggle("active", language === "uz");
+
+    document.getElementById("enBtn")
+        .classList.toggle("active", language === "en");
+}
+
+
+// Default language
+setLanguage("uz");
+
+</script>
+
+</body>
+</html>
